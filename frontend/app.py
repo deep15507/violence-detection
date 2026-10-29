@@ -11,7 +11,7 @@ import plotly.graph_objects as go
 import requests
 import streamlit as st
 
-DEFAULT_API = os.getenv("API_URL", "http://localhost:8000")
+DEFAULT_API = os.getenv("API_URL", "https://violence-detection-ptju.onrender.com")
 RED, GREEN, INDIGO = "#ef4444", "#22c55e", "#6366f1"
 
 st.set_page_config(page_title="Violence Detection AI", page_icon="🛡️", layout="wide")
