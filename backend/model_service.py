@@ -31,7 +31,7 @@ class ViolenceModel:
         # compile=False -> we only need inference, avoids optimizer/loss deserialisation issues
         self.model = tf.keras.models.load_model(str(self.path), compile=False)
         # warm-up so the first real request isn't slow
-        # self.model.predict(np.zeros((1, *self.model.input_shape[1:]), dtype="float32"), verbose=0)
+        self.model.predict(np.zeros((1, *self.model.input_shape[1:]), dtype="float32"), verbose=0)
         log.info("Model ready. Input shape: %s", self.model.input_shape)
 
     def predict(self, sequences: np.ndarray) -> np.ndarray:
